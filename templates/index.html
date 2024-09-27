@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Shield - Vulnerability Scanner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Cyber Shield</h1>
+            <p class="tagline">Your First Line of Defense Against Cyber Threats</p>
+        </header>
+        <section class="intro">
+            <p class="description">Welcome to Cyber Shield, a powerful tool designed to help you identify and mitigate
+                security vulnerabilities in your web applications. By scanning for issues like SQL Injection, XSS, and
+                CSRF, we empower you to keep your applications secure.</p>
+        </section>
+        <form method="POST">
+            <input type="text" name="url" placeholder="Enter URL (http/https)" required>
+            <button type="submit">Scan</button>
+        </form>
+        <footer>
+            <p>Your web security is crucial. Regular checks are essential to safeguard your applications!</p>
+        </footer>
+    </div>
+</body>
+
+</html>

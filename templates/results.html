@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Results for {{ target_url }} - Cyber Shield</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Scan Results for {{ target_url }}</h1>
+            <p class="tagline">Detailed Overview of Found Vulnerabilities</p>
+        </header>
+        <section class="intro">
+            <p class="description">The following vulnerabilities were identified during your scan. Review each one to
+                enhance your application's security.</p>
+        </section>
+        {% if results %}
+        <div class="results-container">
+            {% for result in results %}
+            <div class="result-card">
+                <h3>{{ result.description }}</h3>
+                <p><strong>Risk:</strong> {{ result.risk }}</p>
+                <p><strong>Impact:</strong> {{ result.impact }}</p>
+                <p><strong>Remediation:</strong> {{ result.remediation }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No vulnerabilities detected. Your application is secure!</p>
+        {% endif %}
+        <a href="/">Scan another URL</a>
+    </div>
+</body>
+
+</html>
